@@ -19,13 +19,11 @@ function getDish(id) {
     .first();
 }
 
-function addDish(dish) {
-  return db("dishes")
-    .insert(dish)
-    .then(ids => ({ id: ids[0] }));
+function addDish(dish_name) {
+  return db("dishes").insert(dish_name);
 }
 
-function getRecipes() {
+function getRecipes(id) {
   return db("recipes");
 }
 
@@ -36,7 +34,5 @@ function getRecipe(id) {
 }
 
 function addRecipe(recipe) {
-  return db("recipes")
-    .insert(recipe)
-    .then(ids => ({ id: ids[0] }));
+  return db("recipes").insert(recipe);
 }
